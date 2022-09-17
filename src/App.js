@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+import logoOIM from './assets/images/logo_OIM.webp';
 import './App.css';
+import Header from './components/sections/Header'
+import Footer from './components/sections/Footer'
 
 function App() {
+  const company={
+    logo: logoOIM,
+    nombre: 'Escuela Olímpica de Matemática',
+    slogan: 'Separa tu clase ¡Ya!'
+  }
+  const creditos={
+    year: new Date().getFullYear(),
+    autor: 'Eduardo Del Carpio Talaverano'
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header company={company}/>
+      <Footer creditos={creditos}/>
+    </>
+    
   );
 }
 
