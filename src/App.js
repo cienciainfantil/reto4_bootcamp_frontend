@@ -1,24 +1,29 @@
 import logoOIM from './assets/images/logo_OIM.webp';
 import './App.css';
-import Header from './components/sections/Header'
-import Footer from './components/sections/Footer'
+import Header from './components/sections/Header';
+import Footer from './components/sections/Footer';
+import AppointmentsPage from './pages/AppointmentsPage';
 
 function App() {
-  const company={
+  const company = {
     logo: logoOIM,
-    nombre: 'Escuela Olímpica de Matemática',
+    name: 'Escuela Olímpica de Matemática',
     slogan: 'Separa tu clase ¡Ya!'
-  }
-  const creditos={
+  };
+
+  const credits = {
     year: new Date().getFullYear(),
-    autor: 'Eduardo Del Carpio Talaverano'
-  }
+    author: 'Eduardo Del Carpio'
+  };
+
   return (
     <>
-      <Header company={company}/>
-      <Footer creditos={creditos}/>
+      <Header company={company} />
+      <main className="overflow-hidden">
+        <AppointmentsPage />
+      </main>
+      <Footer credits={credits} />
     </>
-    
   );
 }
 
